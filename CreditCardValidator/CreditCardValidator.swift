@@ -7,20 +7,9 @@
 
 import Foundation
 
-public extension String {
-    
-    public var onlyNumbers: String {
-        let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
-        let numbers = self.componentsSeparatedByCharactersInSet(set)
-        return "".join(numbers)
-    }
-    
-}
-
-
 public class CreditCardValidator {
     
-    typealias T = CreditCardValidationType
+    public typealias T = CreditCardValidationType
     
     public lazy var types: [T] = {
         var types = [T]()
@@ -40,7 +29,8 @@ public class CreditCardValidator {
     public func typeFromString(string: String) -> T? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
-            if predicate.evaluateWithObject(string.onlyNumbers) {
+            let numbersString = self.onlyNumbersFromString(string)
+            if predicate.evaluateWithObject(numbersString) {
                 return type
             }
         }
@@ -55,7 +45,7 @@ public class CreditCardValidator {
     :returns: true or false
     */
     public func validateString(string: String) -> Bool {
-        let numbers = string.onlyNumbers
+        let numbers = self.onlyNumbersFromString(string)
         if count(numbers) < 9 {
             return false
         }
@@ -96,8 +86,14 @@ public class CreditCardValidator {
         return typeFromString(string) == type
     }
     
+    public func onlyNumbersFromString(string: String) -> String {
+        let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        let numbers = string.componentsSeparatedByCharactersInSet(set)
+        return "".join(numbers)
+    }
+    
     // MARK: - Loading data
-
+    
     private static let types = [
         [
             "name": "Amex",
