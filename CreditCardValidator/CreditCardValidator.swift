@@ -9,12 +9,10 @@ import Foundation
 
 public class CreditCardValidator {
     
-    public typealias T = CreditCardValidationType
-    
-    public lazy var types: [T] = {
-        var types = [T]()
+    public lazy var types: [CreditCardValidationType] = {
+        var types = [CreditCardValidationType]()
         for object in CreditCardValidator.types {
-            types.append(T(dict: object))
+            types.append(CreditCardValidationType(dict: object))
         }
         return types
         }()
@@ -28,7 +26,7 @@ public class CreditCardValidator {
     
     :returns: CreditCardValidationType structure
     */
-    public func typeFromString(string: String) -> T? {
+    public func typeFromString(string: String) -> CreditCardValidationType? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
             let numbersString = self.onlyNumbersFromString(string)
@@ -84,7 +82,7 @@ public class CreditCardValidator {
     
     :returns: true or false
     */
-    public func validateString(string: String, forType type: T) -> Bool {
+    public func validateString(string: String, forType type: CreditCardValidationType) -> Bool {
         return typeFromString(string) == type
     }
     
