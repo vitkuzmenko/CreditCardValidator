@@ -8,6 +8,17 @@
 
 import Foundation
 
+extension String {
+    
+    var onlyNumbers: String {
+        let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        let numbers = self.componentsSeparatedByCharactersInSet(set)
+        return "".join(numbers)
+    }
+    
+}
+
+
 class CreditCardValidator {
     
     typealias T = CreditCardValidationType
