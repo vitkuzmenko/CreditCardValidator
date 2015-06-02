@@ -1,5 +1,5 @@
 # Credit Card Validator on Swift
-Credit Card Validator on Swift.
+Credit Card Validator and type detector on Swift.
 
 Inspired from [https://github.com/MaxKramer/ObjectiveLuhn]()
 
