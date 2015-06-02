@@ -1,24 +1,23 @@
 //
 //  CreditCardValidationType.swift
-//  WOSDK
 //
 //  Created by Vitaliy Kuzmenko on 02/06/15.
-//  Copyright (c) 2015 Wallet One. All rights reserved.
+//  Copyright (c) 2015. All rights reserved.
 //
 
 import Foundation
 
-func ==(lhs: CreditCardValidationType, rhs: CreditCardValidationType) -> Bool {
+public func ==(lhs: CreditCardValidationType, rhs: CreditCardValidationType) -> Bool {
     return lhs.name == rhs.name
 }
 
-struct CreditCardValidationType: Equatable {
+public struct CreditCardValidationType: Equatable {
     
-    var name: String
+    public var name: String
     
-    var regex: String
+    public var regex: String
 
-    init(dict: [String: AnyObject]) {
+    public init(dict: [String: AnyObject]) {
         if let name = dict["name"] as? String {
             self.name = name
         } else {

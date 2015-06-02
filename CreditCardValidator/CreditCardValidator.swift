@@ -1,16 +1,15 @@
 //
 //  CreditCardValidator.swift
-//  WOSDK
 //
 //  Created by Vitaliy Kuzmenko on 02/06/15.
-//  Copyright (c) 2015 Wallet One. All rights reserved.
+//  Copyright (c) 2015. All rights reserved.
 //
 
 import Foundation
 
-extension String {
+public extension String {
     
-    var onlyNumbers: String {
+    public var onlyNumbers: String {
         let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
         let numbers = self.componentsSeparatedByCharactersInSet(set)
         return "".join(numbers)
@@ -19,11 +18,11 @@ extension String {
 }
 
 
-class CreditCardValidator {
+public class CreditCardValidator {
     
     typealias T = CreditCardValidationType
     
-    lazy var types: [T] = {
+    public lazy var types: [T] = {
         var types = [T]()
         for object in CreditCardValidator.types {
             types.append(T(dict: object))
@@ -38,7 +37,7 @@ class CreditCardValidator {
     
     :returns: CreditCardValidationType structure
     */
-    func typeFromString(string: String) -> T? {
+    public func typeFromString(string: String) -> T? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
             if predicate.evaluateWithObject(string.onlyNumbers) {
@@ -55,7 +54,7 @@ class CreditCardValidator {
     
     :returns: true or false
     */
-    func validateString(string: String) -> Bool {
+    public func validateString(string: String) -> Bool {
         let numbers = string.onlyNumbers
         if count(numbers) < 9 {
             return false
@@ -93,7 +92,7 @@ class CreditCardValidator {
     
     :returns: true or false
     */
-    func validateString(string: String, forType type: T) -> Bool {
+    public func validateString(string: String, forType type: T) -> Bool {
         return typeFromString(string) == type
     }
     
