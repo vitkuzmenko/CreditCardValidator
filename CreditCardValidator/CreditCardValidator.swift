@@ -19,6 +19,8 @@ public class CreditCardValidator {
         return types
         }()
     
+    public init() { }
+    
     /**
     Get card type from string
     
