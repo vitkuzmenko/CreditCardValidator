@@ -171,6 +171,8 @@
 		79EAF07B1B1DDDD2005A4DD7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Kuzmenko Family";
 				TargetAttributes = {

@@ -22,9 +22,9 @@ public class CreditCardValidator {
     /**
     Get card type from string
     
-    :param: string card number string
+    - parameter string: card number string
     
-    :returns: CreditCardValidationType structure
+    - returns: CreditCardValidationType structure
     */
     public func typeFromString(string: String) -> CreditCardValidationType? {
         for type in types {
@@ -40,30 +40,30 @@ public class CreditCardValidator {
     /**
     Validate card number
     
-    :param: string card number string
+    - parameter string: card number string
     
-    :returns: true or false
+    - returns: true or false
     */
     public func validateString(string: String) -> Bool {
         let numbers = self.onlyNumbersFromString(string)
-        if count(numbers) < 9 {
+        if numbers.characters.count < 9 {
             return false
         }
         
         var reversedString = ""
         let range = Range<String.Index>(start: numbers.startIndex, end: numbers.endIndex)
         
-        numbers.enumerateSubstringsInRange(range, options: (.Reverse | .ByComposedCharacterSequences)) { (substring, substringRange, enclosingRange, stop) -> () in
-            reversedString += substring
+        numbers.enumerateSubstringsInRange(range, options: [NSStringEnumerationOptions.Reverse, NSStringEnumerationOptions.ByComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
+            reversedString += substring!
         }
         
         var oddSum = 0, evenSum = 0
-        var reversedArray = Array(reversedString)
+        let reversedArray = reversedString.characters
         var i = 0
         
         for s in reversedArray {
             
-            let digit = String(s).toInt()!
+            let digit = Int(String(s))!
             
             if i++ % 2 == 0 {
                 evenSum += digit
@@ -77,10 +77,10 @@ public class CreditCardValidator {
     /**
     Validate card number string for type
     
-    :param: string card number string
-    :param: type   CreditCardValidationType structure
+    - parameter string: card number string
+    - parameter type:   CreditCardValidationType structure
     
-    :returns: true or false
+    - returns: true or false
     */
     public func validateString(string: String, forType type: CreditCardValidationType) -> Bool {
         return typeFromString(string) == type
@@ -89,7 +89,7 @@ public class CreditCardValidator {
     public func onlyNumbersFromString(string: String) -> String {
         let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
         let numbers = string.componentsSeparatedByCharactersInSet(set)
-        return "".join(numbers)
+        return numbers.joinWithSeparator("")
     }
     
     // MARK: - Loading data

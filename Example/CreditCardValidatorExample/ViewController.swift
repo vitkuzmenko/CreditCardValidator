@@ -26,23 +26,24 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func cardNumberDidChange(sender: UITextField) {
-        let number = sender.text
-        if number.isEmpty {
-            self.cardValidationLabel.text = "Enter card number"
-            self.cardValidationLabel.textColor = UIColor.blackColor()
-
-            self.cardTypeLabel.text = "Enter card number"
-            self.cardTypeLabel.textColor = UIColor.blackColor()
-        } else {
-            validateCardNumber(number)
-            detectCardNumberType(number)
+        if let number = sender.text {
+            if number.isEmpty {
+                self.cardValidationLabel.text = "Enter card number"
+                self.cardValidationLabel.textColor = UIColor.blackColor()
+                
+                self.cardTypeLabel.text = "Enter card number"
+                self.cardTypeLabel.textColor = UIColor.blackColor()
+            } else {
+                validateCardNumber(number)
+                detectCardNumberType(number)
+            }
         }
     }
     
     /**
     Credit card validation
     
-    :param: number credit card number
+    - parameter number: credit card number
     */
     func validateCardNumber(number: String) {
         if creditCardValidator.validateString(number) {
@@ -57,7 +58,7 @@ class ViewController: UITableViewController {
     /**
     Credit card type detection
     
-    :param: number credit card number
+    - parameter number: credit card number
     */
     func detectCardNumberType(number: String) {
         if let type = creditCardValidator.typeFromString(number) {
