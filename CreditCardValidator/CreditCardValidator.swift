@@ -86,7 +86,7 @@ public class CreditCardValidator {
     }
     
     public func onlyNumbers(string: String) -> String {
-        let set = NSCharacterSet.decimalDigits.inverted
+        let set = CharacterSet.decimalDigits.inverted
         let numbers = string.components(separatedBy: set)
         return numbers.joined(separator: "")
     }
