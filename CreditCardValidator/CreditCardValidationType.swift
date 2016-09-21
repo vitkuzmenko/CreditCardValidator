@@ -17,7 +17,7 @@ public struct CreditCardValidationType: Equatable {
     
     public var regex: String
 
-    public init(dict: [String: AnyObject]) {
+    public init(dict: [String: Any]) {
         if let name = dict["name"] as? String {
             self.name = name
         } else {

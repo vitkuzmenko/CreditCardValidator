@@ -12,20 +12,9 @@
 		79EAF08E1B1DDDD2005A4DD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EAF08C1B1DDDD2005A4DD7 /* Main.storyboard */; };
 		79EAF0901B1DDDD2005A4DD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79EAF08F1B1DDDD2005A4DD7 /* Images.xcassets */; };
 		79EAF0931B1DDDD2005A4DD7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EAF0911B1DDDD2005A4DD7 /* LaunchScreen.xib */; };
-		79EAF09F1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF09E1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.swift */; };
 		79EAF0B01B1DDE00005A4DD7 /* CreditCardValidationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF0AE1B1DDE00005A4DD7 /* CreditCardValidationType.swift */; };
 		79EAF0B11B1DDE00005A4DD7 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF0AF1B1DDE00005A4DD7 /* CreditCardValidator.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		79EAF0991B1DDDD2005A4DD7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 79EAF07B1B1DDDD2005A4DD7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79EAF0821B1DDDD2005A4DD7;
-			remoteInfo = CreditCardValidatorExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		79EAF0831B1DDDD2005A4DD7 /* CreditCardValidatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardValidatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,22 +24,12 @@
 		79EAF08D1B1DDDD2005A4DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79EAF08F1B1DDDD2005A4DD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		79EAF0921B1DDDD2005A4DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		79EAF0981B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCardValidatorExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79EAF09D1B1DDDD2005A4DD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79EAF09E1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardValidatorExampleTests.swift; sourceTree = "<group>"; };
 		79EAF0AE1B1DDE00005A4DD7 /* CreditCardValidationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidationType.swift; sourceTree = "<group>"; };
 		79EAF0AF1B1DDE00005A4DD7 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		79EAF0801B1DDDD2005A4DD7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79EAF0951B1DDDD2005A4DD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				79EAF0851B1DDDD2005A4DD7 /* CreditCardValidatorExample */,
-				79EAF09B1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests */,
 				79EAF0841B1DDDD2005A4DD7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				79EAF0831B1DDDD2005A4DD7 /* CreditCardValidatorExample.app */,
-				79EAF0981B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,23 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				79EAF0871B1DDDD2005A4DD7 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		79EAF09B1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				79EAF09E1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.swift */,
-				79EAF09C1B1DDDD2005A4DD7 /* Supporting Files */,
-			);
-			path = CreditCardValidatorExampleTests;
-			sourceTree = "<group>";
-		};
-		79EAF09C1B1DDDD2005A4DD7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				79EAF09D1B1DDDD2005A4DD7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,24 +107,6 @@
 			productReference = 79EAF0831B1DDDD2005A4DD7 /* CreditCardValidatorExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		79EAF0971B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79EAF0A51B1DDDD2005A4DD7 /* Build configuration list for PBXNativeTarget "CreditCardValidatorExampleTests" */;
-			buildPhases = (
-				79EAF0941B1DDDD2005A4DD7 /* Sources */,
-				79EAF0951B1DDDD2005A4DD7 /* Frameworks */,
-				79EAF0961B1DDDD2005A4DD7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				79EAF09A1B1DDDD2005A4DD7 /* PBXTargetDependency */,
-			);
-			name = CreditCardValidatorExampleTests;
-			productName = CreditCardValidatorExampleTests;
-			productReference = 79EAF0981B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,10 +120,7 @@
 				TargetAttributes = {
 					79EAF0821B1DDDD2005A4DD7 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					79EAF0971B1DDDD2005A4DD7 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 79EAF0821B1DDDD2005A4DD7;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -199,7 +138,6 @@
 			projectRoot = "";
 			targets = (
 				79EAF0821B1DDDD2005A4DD7 /* CreditCardValidatorExample */,
-				79EAF0971B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,13 +150,6 @@
 				79EAF08E1B1DDDD2005A4DD7 /* Main.storyboard in Resources */,
 				79EAF0931B1DDDD2005A4DD7 /* LaunchScreen.xib in Resources */,
 				79EAF0901B1DDDD2005A4DD7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79EAF0961B1DDDD2005A4DD7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,23 +167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79EAF0941B1DDDD2005A4DD7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				79EAF09F1B1DDDD2005A4DD7 /* CreditCardValidatorExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		79EAF09A1B1DDDD2005A4DD7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 79EAF0821B1DDDD2005A4DD7 /* CreditCardValidatorExample */;
-			targetProxy = 79EAF0991B1DDDD2005A4DD7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		79EAF08C1B1DDDD2005A4DD7 /* Main.storyboard */ = {
@@ -364,6 +279,7 @@
 				INFOPLIST_FILE = CreditCardValidatorExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -374,40 +290,7 @@
 				INFOPLIST_FILE = CreditCardValidatorExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		79EAF0A61B1DDDD2005A4DD7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CreditCardValidatorExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreditCardValidatorExample.app/CreditCardValidatorExample";
-			};
-			name = Debug;
-		};
-		79EAF0A71B1DDDD2005A4DD7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CreditCardValidatorExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreditCardValidatorExample.app/CreditCardValidatorExample";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -428,15 +311,6 @@
 			buildConfigurations = (
 				79EAF0A31B1DDDD2005A4DD7 /* Debug */,
 				79EAF0A41B1DDDD2005A4DD7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		79EAF0A51B1DDDD2005A4DD7 /* Build configuration list for PBXNativeTarget "CreditCardValidatorExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79EAF0A61B1DDDD2005A4DD7 /* Debug */,
-				79EAF0A71B1DDDD2005A4DD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

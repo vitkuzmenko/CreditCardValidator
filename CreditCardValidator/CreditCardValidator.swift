@@ -26,11 +26,11 @@ public class CreditCardValidator {
     
     - returns: CreditCardValidationType structure
     */
-    public func typeFromString(string: String) -> CreditCardValidationType? {
+    public func type(from string: String) -> CreditCardValidationType? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
-            let numbersString = self.onlyNumbersFromString(string)
-            if predicate.evaluateWithObject(numbersString) {
+            let numbersString = self.onlyNumbers(string: string)
+            if predicate.evaluate(with: numbersString) {
                 return type
             }
         }
@@ -44,28 +44,27 @@ public class CreditCardValidator {
     
     - returns: true or false
     */
-    public func validateString(string: String) -> Bool {
-        let numbers = self.onlyNumbersFromString(string)
+    public func validate(string: String) -> Bool {
+        let numbers = self.onlyNumbers(string: string)
         if numbers.characters.count < 9 {
             return false
         }
         
         var reversedString = ""
-        let range = Range<String.Index>(start: numbers.startIndex, end: numbers.endIndex)
+        let range: Range<String.Index> = numbers.startIndex..<numbers.endIndex
         
-        numbers.enumerateSubstringsInRange(range, options: [NSStringEnumerationOptions.Reverse, NSStringEnumerationOptions.ByComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
+        numbers.enumerateSubstrings(in: range, options: [.reverse, .byComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
             reversedString += substring!
         }
         
         var oddSum = 0, evenSum = 0
         let reversedArray = reversedString.characters
-        var i = 0
         
-        for s in reversedArray {
+        for (i, s) in reversedArray.enumerated() {
             
             let digit = Int(String(s))!
             
-            if i++ % 2 == 0 {
+            if i % 2 == 0 {
                 evenSum += digit
             } else {
                 oddSum += digit / 5 + (2 * digit) % 10
@@ -82,14 +81,14 @@ public class CreditCardValidator {
     
     - returns: true or false
     */
-    public func validateString(string: String, forType type: CreditCardValidationType) -> Bool {
-        return typeFromString(string) == type
+    public func validate(string: String, forType type: CreditCardValidationType) -> Bool {
+        return self.type(from: string) == type
     }
     
-    public func onlyNumbersFromString(string: String) -> String {
-        let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
-        let numbers = string.componentsSeparatedByCharactersInSet(set)
-        return numbers.joinWithSeparator("")
+    public func onlyNumbers(string: String) -> String {
+        let set = NSCharacterSet.decimalDigits.inverted
+        let numbers = string.components(separatedBy: set)
+        return numbers.joined(separator: "")
     }
     
     // MARK: - Loading data

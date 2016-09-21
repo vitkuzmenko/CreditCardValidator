@@ -29,13 +29,13 @@ class ViewController: UITableViewController {
         if let number = sender.text {
             if number.isEmpty {
                 self.cardValidationLabel.text = "Enter card number"
-                self.cardValidationLabel.textColor = UIColor.blackColor()
+                self.cardValidationLabel.textColor = UIColor.black
                 
                 self.cardTypeLabel.text = "Enter card number"
-                self.cardTypeLabel.textColor = UIColor.blackColor()
+                self.cardTypeLabel.textColor = UIColor.black
             } else {
-                validateCardNumber(number)
-                detectCardNumberType(number)
+                validateCardNumber(number: number)
+                detectCardNumberType(number: number)
             }
         }
     }
@@ -46,12 +46,12 @@ class ViewController: UITableViewController {
     - parameter number: credit card number
     */
     func validateCardNumber(number: String) {
-        if creditCardValidator.validateString(number) {
+        if creditCardValidator.validate(string: number) {
             self.cardValidationLabel.text = "Card number is valid"
-            self.cardValidationLabel.textColor = UIColor.greenColor()
+            self.cardValidationLabel.textColor = UIColor.green
         } else {
             self.cardValidationLabel.text = "Card number is invalid"
-            self.cardValidationLabel.textColor = UIColor.redColor()
+            self.cardValidationLabel.textColor = UIColor.red
         }
     }
 
@@ -61,12 +61,12 @@ class ViewController: UITableViewController {
     - parameter number: credit card number
     */
     func detectCardNumberType(number: String) {
-        if let type = creditCardValidator.typeFromString(number) {
+        if let type = creditCardValidator.type(from: number) {
             self.cardTypeLabel.text = type.name
-            self.cardTypeLabel.textColor = UIColor.greenColor()
+            self.cardTypeLabel.textColor = UIColor.green
         } else {
             self.cardTypeLabel.text = "Undefined"
-            self.cardTypeLabel.textColor = UIColor.redColor()
+            self.cardTypeLabel.textColor = UIColor.red
         }
     }
     
