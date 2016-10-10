@@ -29,8 +29,8 @@ public class CreditCardValidator {
     public func type(from string: String) -> CreditCardValidationType? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
-            let numbersString = self.onlyNumbers(string: string)
-            if predicate.evaluate(with: numbersString) {
+            let numbersString = self.onlyNumbers(string)
+            if predicate.evaluateWithObject(numbersString) {
                 return type
             }
         }
@@ -45,22 +45,22 @@ public class CreditCardValidator {
     - returns: true or false
     */
     public func validate(string: String) -> Bool {
-        let numbers = self.onlyNumbers(string: string)
+        let numbers = self.onlyNumbers(string)
         if numbers.characters.count < 9 {
             return false
         }
         
         var reversedString = ""
         let range: Range<String.Index> = numbers.startIndex..<numbers.endIndex
-        
-        numbers.enumerateSubstrings(in: range, options: [.reverse, .byComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
+
+        numbers.enumerateSubstringsInRange(range, options: [.Reverse, .ByComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) in
             reversedString += substring!
         }
         
         var oddSum = 0, evenSum = 0
         let reversedArray = reversedString.characters
         
-        for (i, s) in reversedArray.enumerated() {
+        for (i, s) in reversedArray.enumerate() {
             
             let digit = Int(String(s))!
             
@@ -86,9 +86,9 @@ public class CreditCardValidator {
     }
     
     public func onlyNumbers(string: String) -> String {
-        let set = CharacterSet.decimalDigits.inverted
-        let numbers = string.components(separatedBy: set)
-        return numbers.joined(separator: "")
+        let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        let numbers = string.componentsSeparatedByCharactersInSet(set)
+        return numbers.joinWithSeparator("")
     }
     
     // MARK: - Loading data
