@@ -29,13 +29,13 @@ class ViewController: UITableViewController {
         if let number = sender.text {
             if number.isEmpty {
                 self.cardValidationLabel.text = "Enter card number"
-                self.cardValidationLabel.textColor = UIColor.black
+                self.cardValidationLabel.textColor = UIColor.blackColor()
                 
                 self.cardTypeLabel.text = "Enter card number"
-                self.cardTypeLabel.textColor = UIColor.black
+                self.cardTypeLabel.textColor = UIColor.blackColor()
             } else {
-                validateCardNumber(number: number)
-                detectCardNumberType(number: number)
+                validateCardNumber(number)
+                detectCardNumberType(number)
             }
         }
     }
@@ -46,12 +46,12 @@ class ViewController: UITableViewController {
     - parameter number: credit card number
     */
     func validateCardNumber(number: String) {
-        if creditCardValidator.validate(string: number) {
+        if creditCardValidator.validate(number) {
             self.cardValidationLabel.text = "Card number is valid"
-            self.cardValidationLabel.textColor = UIColor.green
+            self.cardValidationLabel.textColor = UIColor.greenColor()
         } else {
             self.cardValidationLabel.text = "Card number is invalid"
-            self.cardValidationLabel.textColor = UIColor.red
+            self.cardValidationLabel.textColor = UIColor.redColor()
         }
     }
 
@@ -63,10 +63,10 @@ class ViewController: UITableViewController {
     func detectCardNumberType(number: String) {
         if let type = creditCardValidator.type(from: number) {
             self.cardTypeLabel.text = type.name
-            self.cardTypeLabel.textColor = UIColor.green
+            self.cardTypeLabel.textColor = UIColor.greenColor()
         } else {
             self.cardTypeLabel.text = "Undefined"
-            self.cardTypeLabel.textColor = UIColor.red
+            self.cardTypeLabel.textColor = UIColor.redColor()
         }
     }
     

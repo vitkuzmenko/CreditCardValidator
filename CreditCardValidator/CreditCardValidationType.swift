@@ -17,14 +17,14 @@ public struct CreditCardValidationType: Equatable {
     
     public var regex: String
 
-    public init(dict: [String: Any]) {
-        if let name = dict["name"] as? String {
+    public init(dict: [String: String]) {
+        if let name = dict["name"] {
             self.name = name
         } else {
             self.name = ""
         }
         
-        if let regex = dict["regex"] as? String {
+        if let regex = dict["regex"] {
             self.regex = regex
         } else {
             self.regex = ""
