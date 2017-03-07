@@ -99,10 +99,10 @@ public class CreditCardValidator {
             "regex": "^3[47][0-9]{5,}$"
         ], [
             "name": "Visa",
-            "regex": "^4[0-9]{6,}$"
+            "regex": "^4\\d{0,}$"
         ], [
             "name": "MasterCard",
-            "regex": "^5[1-5][0-9]{5,}$"
+            "regex": "^5[1-5]\\d{0,14}$"
         ], [
             "name": "Maestro",
             "regex": "^(?:5[0678]\\d\\d|6304|6390|67\\d\\d)\\d{8,15}$"
@@ -118,6 +118,9 @@ public class CreditCardValidator {
         ], [
             "name": "UnionPay",
             "regex": "^62[0-5]\\d{13,16}$"
+        ], [
+            "name": "Mir",
+            "regex": "^22[0-9]{1,14}$"
         ]
     ]
     
