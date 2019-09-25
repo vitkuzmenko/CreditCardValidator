@@ -5,7 +5,24 @@ Inspired from [https://github.com/MaxKramer/ObjectiveLuhn]()
 
 
 # Installation
-`pod "CreditCardValidator"`
+
+### CocoaPods
+
+```
+pod "CreditCardValidator"
+```
+
+### Swift Package Manager
+
+```swift
+.package(url: "https://github.com/vitkuzmenko/CreditCardValidator.git", .upToNextMajor(from: "_currentVersion_"))
+```
+
+After specifying `"CreditCardValidator"` as a dependency of the target in which you want to use it, run `swift package update`.
+
+### Accio
+
+Do the same configurations as for SwiftPM, then run `accio update` instead of `swift package update`.
 
 # Usage
 ## Validating
