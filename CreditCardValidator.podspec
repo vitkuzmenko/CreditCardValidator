@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/vitkuzmenko/CreditCardValidator.git", :tag => s.version.to_s }
 
-  s.source_files  = "CreditCardValidator/*.swift"
+  s.source_files  = "Sources/CreditCardValidator/*.swift"
   
   s.requires_arc = 'true'
 
