@@ -6,13 +6,13 @@ Inspired from [https://github.com/MaxKramer/ObjectiveLuhn]()
 ### CocoaPods
 
 ```
-pod "CreditCardValidator"
+pod "CreditCardValidator", '~> 0.5.0'
 ```
 
 ### Swift Package Manager
 
 ```swift
-.package(url: "https://github.com/vitkuzmenko/CreditCardValidator.git", .upToNextMajor(from: "_currentVersion_"))
+.package(url: "https://github.com/vitkuzmenko/CreditCardValidator.git", from: "0.5.0")
 ```
 
 After specifying `"CreditCardValidator"` as a dependency of the target in which you want to use it, run `swift package update`.
