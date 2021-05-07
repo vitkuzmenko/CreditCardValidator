@@ -6,7 +6,7 @@ Inspired from [https://github.com/MaxKramer/ObjectiveLuhn]()
 ### CocoaPods
 
 ```
-pod "CreditCardValidator", '~> 0.5.0'
+pod "CreditCardValidator", '~> 0.5.1'
 ```
 
 ### Swift Package Manager
