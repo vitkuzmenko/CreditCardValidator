@@ -1,5 +1,3 @@
-Inspired from [https://github.com/MaxKramer/ObjectiveLuhn]()
-
 
 # Installation
 
