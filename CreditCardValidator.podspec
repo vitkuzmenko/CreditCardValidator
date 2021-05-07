@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 	s.name = "CreditCardValidator"
-	s.version = "0.5.0"
+	s.version = "0.5.1"
 	s.summary = "Credit Card Validator in Swift"
 	s.homepage = "https://github.com/vitkuzmenko/CreditCardValidator"
 	s.license = { :type => "MIT", :file => "LICENSE" }
@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
 	s.source = { :git => "https://github.com/vitkuzmenko/CreditCardValidator.git", :tag => s.version.to_s }
 	s.source_files = "Sources/CreditCardValidator/*.swift"
 	
-	s.swift_versions = ['5.1', '5.2', '5.3']
+	s.swift_versions = ['5.1', '5.2', '5.3', '5.4']
 
 end
