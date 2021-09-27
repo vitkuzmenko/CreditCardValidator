@@ -79,8 +79,6 @@ public struct CreditCardValidator {
             .compactMap({ Int(String($0)) })
             .enumerated()
             .reduce(Calculation(odd: 0, even: 0), { value, iterator in
-                print(iterator.self)
-                print(value.self)
                 return .init(
                     odd: iterator.offset % 2 != 0 ? value.odd + (iterator.element / 5 + (2 * iterator.element) % 10) : value.odd,
                     even: iterator.offset % 2 == 0 ? value.even + iterator.element : value.even
