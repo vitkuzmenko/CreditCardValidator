@@ -56,7 +56,7 @@ public struct CreditCardValidator {
     
     /// Validate credit card number
     public var isValid: Bool {
-        string.count >= 9 && string
+        isValid(for: string)
             .reversed()
             .compactMap({ Int(String($0)) })
             .enumerated()
@@ -76,6 +76,14 @@ public struct CreditCardValidator {
     /// - Returns: bool value
     public func isValid(for type: CreditCardType) -> Bool {
         isValid && self.type == type
+    }
+    
+    /// Validate string for credit card type
+    /// - Parameters:
+    ///   - string: card number string
+    /// - Returns: bool value
+    private func isValid(for string: String) -> Bool {
+        string.count >= 9 && string
     }
     
 }
