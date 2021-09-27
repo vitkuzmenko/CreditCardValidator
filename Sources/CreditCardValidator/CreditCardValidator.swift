@@ -82,7 +82,7 @@ public struct CreditCardValidator {
     /// - Parameters:
     ///   - string: card number string
     /// - Returns: bool value
-    private func isValid(for string: String) -> Bool {
+    private func isValid(for string: String) -> String {
         string.count >= 9 && string
     }
     
