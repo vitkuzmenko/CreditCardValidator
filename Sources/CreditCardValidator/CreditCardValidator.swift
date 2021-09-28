@@ -57,7 +57,6 @@ public struct CreditCardValidator {
     /// Validate credit card number
     public var isValid: Bool {
         string.count >= 9 && isValid(for: string)
-            
     }
     
     /// Validate card number string for type
@@ -80,11 +79,19 @@ public struct CreditCardValidator {
             .enumerated()
             .reduce(Calculation(odd: 0, even: 0), { value, iterator in
                 return .init(
-                    odd: iterator.offset % 2 != 0 ? value.odd + (iterator.element / 5 + (2 * iterator.element) % 10) : value.odd,
-                    even: iterator.offset % 2 == 0 ? value.even + iterator.element : value.even
+                    odd: odd(value: value, iterator: iterator),
+                    even: even(value: value, iterator: iterator)
                 )
             })
             .result()
+    }
+    
+    private func odd(value: Calculation, iterator: EnumeratedSequence<[Int]>.Element) -> Int {
+        iterator.offset % 2 != 0 ? value.odd + (iterator.element / 5 + (2 * iterator.element) % 10) : value.odd
+    }
+
+    private func even(value: Calculation, iterator: EnumeratedSequence<[Int]>.Element) -> Int {
+        iterator.offset % 2 == 0 ? value.even + iterator.element : value.even
     }
     
 }
