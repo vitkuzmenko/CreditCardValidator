@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 	s.name = "CreditCardValidator"
-	s.version = "0.5.0"
+	s.version = "0.5.2"
 	s.summary = "Credit Card Validator in Swift"
 	s.homepage = "https://github.com/vitkuzmenko/CreditCardValidator"
 	s.license = { :type => "MIT", :file => "LICENSE" }
