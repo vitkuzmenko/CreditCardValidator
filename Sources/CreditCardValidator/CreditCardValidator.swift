@@ -10,6 +10,25 @@ public enum CreditCardType: String {
     case discover = "^6(?:011|5[0-9]{2})[0-9]{3,}$"
     case unionPay = "^62[0-5]\\d{13,16}$"
     case mir = "^2[0-9]{6,}$"
+
+    /// Possible C/C number lengths for each C/C type
+    /// reference: https://en.wikipedia.org/wiki/Payment_card_number
+    var validNumberLength: IndexSet {
+        switch self {
+        case .visa:
+            return IndexSet([13,16])
+        case .amex:
+            return IndexSet(integer: 15)
+        case .maestro:
+            return IndexSet(integersIn: 12...19)
+        case .dinersClub:
+            return IndexSet(integersIn: 14...19)
+        case .jcb, .discover, .unionPay, .mir:
+            return IndexSet(integersIn: 16...19)
+        default:
+            return IndexSet(integer: 16)
+        }
+    }
 }
 
 public struct CreditCardValidator {
@@ -56,7 +75,9 @@ public struct CreditCardValidator {
     
     /// Validate credit card number
     public var isValid: Bool {
-        string.count >= 9 && isValid(for: string)
+        guard let type = type else { return false }
+        let isValidLength = type.validNumberLength.contains(string.count)
+        return isValidLength && isValid(for: string)
     }
     
     /// Validate card number string for type
