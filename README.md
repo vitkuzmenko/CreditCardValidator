@@ -39,9 +39,9 @@ if CreditCardValidator(number).isValid {
 let number = "1234 5678 9123 4567"
    
 if let type = CreditCardValidator(number).type {
-	print(type.name) // Visa, Mastercard, Amex etc.
+    print(type.name) // Visa, Mastercard, Amex etc.
 } else {
-	// I Can't detect type of credit card
+    // I Can't detect type of credit card
 }
 
 ```
