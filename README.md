@@ -51,9 +51,9 @@ if let type = CreditCardValidator(number).type {
 let number = "1234 5678 9123 4567"
    
 if CreditCardValidator(number).isValid(for: .visa) {
-	// Card number is valid and type is .visa
+    // Card number is valid and type is .visa
 } else {
-	// I Can't detect type of credit card
+    // I Can't detect type of credit card
 }
 
 ```
