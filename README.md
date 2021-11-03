@@ -4,13 +4,13 @@
 ### CocoaPods
 
 ```
-pod "CreditCardValidator", '~> 0.5.2'
+pod "CreditCardValidator", '~> 0.5.3'
 ```
 
 ### Swift Package Manager
 
 ```swift
-.package(url: "https://github.com/vitkuzmenko/CreditCardValidator.git", from: "0.5.2")
+.package(url: "https://github.com/vitkuzmenko/CreditCardValidator.git", from: "0.5.3")
 ```
 
 After specifying `"CreditCardValidator"` as a dependency of the target in which you want to use it, run `swift package update`.
