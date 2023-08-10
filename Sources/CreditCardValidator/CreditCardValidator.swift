@@ -29,6 +29,29 @@ public enum CreditCardType: String {
             return IndexSet(integer: 16)
         }
     }
+    
+    var name: String {
+        switch self {
+        case .amex:
+             return "Amex"
+        case .visa:
+            return "Visa"
+        case .masterCard:
+            return "MasterCard"
+        case .maestro:
+            return "Maestro"
+        case .dinersClub:
+            return "Diners Club"
+        case .jcb:
+            return "JCB"
+        case .discover:
+            return "Discover"
+        case .unionPay:
+            return "UnionPay"
+        case .mir:
+            return "Mir"
+        }
+    }
 }
 
 public struct CreditCardValidator {
