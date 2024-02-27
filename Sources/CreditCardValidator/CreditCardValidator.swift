@@ -54,20 +54,14 @@ public enum CreditCardType: String {
     }
 }
 
+extension CreditCardType: Codable, CaseIterable {
+    
+}
+
 public struct CreditCardValidator {
     
     /// Available credit card types
-    private let types: [CreditCardType] = [
-        .amex,
-        .visa,
-        .masterCard,
-        .maestro,
-        .dinersClub,
-        .jcb,
-        .discover,
-        .unionPay,
-        .mir
-    ]
+    private let types: [CreditCardType] = CreditCardType.allCases
     
     private let string: String
     
