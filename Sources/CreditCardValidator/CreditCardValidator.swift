@@ -58,6 +58,10 @@ extension CreditCardType: Codable, CaseIterable {
     
 }
 
+#if swift(>=5.5)
+extension CreditCardType: Sendable {}
+#endif
+
 public struct CreditCardValidator {
     
     /// Available credit card types
